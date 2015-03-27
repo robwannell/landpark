@@ -8,13 +8,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 namespace :deploy do
 
-  desc "build missing paperclip styles"
-  task :build_missing_paperclip_styles do
-    on roles(:app) do
-      execute "cd #{current_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
-    end
-  end
-  
+ 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -22,7 +16,7 @@ namespace :deploy do
     end
   end
   
-  after("deploy:compile_assets", "deploy:build_missing_paperclip_styles")
+ 
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
