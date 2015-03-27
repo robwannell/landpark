@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @contribution.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @contribution.lastname %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @contribution.organization %>
+</p>
+
+<p>
+	<%= image_tag @contribution.avatar.url %>
+<p>	<%= image_tag @contribution.avatar.url(:medium) %>
+<p>	<%= image_tag @contribution.avatar.url(:thumb) %>
+<p>
+  <strong>Contribution:</strong>
+  <%= @contribution.contribution %>
+</p>
+
+<p>
+  <strong>Admin contribution level:</strong>
+  <%= @contribution.admin_contribution_level_id %>
+</p>
+
+
+<p>
+  <strong>Added:</strong>
+  <%= @contribution.created_at %>
+</p>
+
+<p>
+  <strong>Modified:</strong>
+  <%= @contribution.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_contribution_path(@contribution) %> |
+<%= link_to 'Back', contributions_path %>

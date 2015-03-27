@@ -1,0 +1,11 @@
+<h1>New Admin Contribution Level</h1>
+
+<%= render 'form' %>
+
+<h2>Current Contribution Levels</h2>
+
+<% @admin_contribution_levels.each do |admin_contribution_level| %>
+ <p><%= admin_contribution_level.rank %> | <%= admin_contribution_level.name %> 
+<br>
+<% end %>
+<p><%= link_to 'Back', admin_contribution_levels_path %>

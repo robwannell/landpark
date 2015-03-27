@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  contribution: 1
+  admin_contribution_level_id: 
+  organization: MyString
+
+two:
+  firstname: MyString
+  lastname: MyString
+  contribution: 1
+  admin_contribution_level_id: 
+  organization: MyString

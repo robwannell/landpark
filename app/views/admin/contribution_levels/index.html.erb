@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Contribution Levels</h1>
+
+<% @admin_contribution_levels.each do |admin_contribution_level| %>
+ <p><%= admin_contribution_level.rank %> | <%= admin_contribution_level.name %> - <%= link_to 'Edit', edit_admin_contribution_level_path(admin_contribution_level) %> | <%= link_to 'Destroy', admin_contribution_level, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<% end %>
+<p><%= link_to 'New Contribution level', new_admin_contribution_level_path, class: 'btn btn-primary' %>

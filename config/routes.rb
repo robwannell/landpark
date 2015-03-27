@@ -1,11 +1,49 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  
+  
+
+  resources :contributions
+
+  namespace :admin do
+    resources :contribution_levels
+  end
+
+  get '/admin' => 'admin#index'
+
+  # You can have the root of your site routed with "root"
+   root 'welcome#index'
+  
+  get '/vision' => 'pages#vision'
+  get '/support' => 'pages#support'
+  get '/donors' => 'pages#donors'
+  get '/privacy' => 'pages#privacy'
+  get '/terms' => 'pages#terms'
+
+  resources :contact, only: [:new, :create]
+  get '/contact', to: 'contact#new'
+  match '/send_mail', to: 'contact#send_mail', via: 'post'
+ 
+ 
+  get 'user_sessions/new'
+
+  get 'user_sessions/create'
+
+  get 'user_sessions/destroy'
+
+ 
+  get '/welcome', to: 'welcome#index'
+  
+  resources :user_sessions
+  resources :users
+
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-   root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

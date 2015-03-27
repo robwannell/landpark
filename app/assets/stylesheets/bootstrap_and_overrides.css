@@ -1,0 +1,112 @@
+body {
+	padding-top:70px;
+	
+}
+
+.welcomex {
+	color:#fff;
+	height:520px;
+	background-position:50% 35%;
+	
+	text-shadow: black 0.1em 0.3em 0.3em !important;
+	background-image: url("stage.jpg");
+	margin-bottom:0;
+}
+
+
+.carousel-control {
+z-index: 5;
+display: inline-block;
+}
+.carousel-indicators li {
+	
+	margin:0 10px;
+}
+
+.carousel-indicators {
+  bottom:10px;
+}
+
+.carousel-indicators .active {
+    background: #ff6600;
+	
+	margin:0 10px;
+}
+
+.item {
+	padding: 380px 0 0 0;
+	text-align:center;
+	margin-top:0px;
+	border:1px solid #fff;
+	text-shadow: black 0.1em 0.3em 0.3em !important;
+	color:#fff;
+	height:500px;
+}
+
+.backtrans {
+	color:#fff;
+	padding:5px 0 0;
+	
+	height: 180px;
+	margin: 0px auto;
+background-color: rgba(0,0,20,0.4); 
+}
+
+.btn-warning {
+	background-color: #ff6600;
+	color:#fff;
+	text-shadow: none;
+	border: 0;
+}
+
+.btn-warning:hover{
+	background-color: #ff4400;
+	
+}
+
+.stage1 {
+	background-image: url("stage.jpg");
+}
+
+.stage2 {
+	background-image: url("donorwall.jpg");
+}
+
+.stage3 {
+	background-image: url("stage2.jpg");
+}
+
+.stage4 {
+	background-image: url("entry.jpg");
+	
+}
+
+
+.page {
+	
+	padding-top:20px;
+}
+
+.rh {
+	
+	padding-top:20px;
+}
+
+.actions {
+	padding-top:0px;
+	
+}
+
+.donorwall {
+	padding: 10px;
+	text-align:center;
+	background-color:#fff;
+	height: 270px;
+}
+
+.noimage {
+	color: #333;
+	font-size: 1.4em;
+	border: 20px solid #fff;
+	background-color: #F5F5F7;
+}
