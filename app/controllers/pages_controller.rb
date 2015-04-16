@@ -6,7 +6,9 @@ class PagesController < ApplicationController
   end
   
   def support
-    
+    @individuals = Supporter.where(:individual => true)
+    @groups = Supporter.where(:group => true)
+    @electeds = Supporter.where(:elected => true)
   end
   
   def donors
@@ -14,7 +16,6 @@ class PagesController < ApplicationController
     @levels = Admin::ContributionLevel.all
     @contributors = Contribution.all
     
-    render layout: "donors"
   end
   
 end

@@ -2,6 +2,44 @@
 <h1>Support for the project</h1>
 <p class="lead">Groups and individuals who have indicated a willingness to help
 
+<% unless @electeds.blank? %>
+<h3>Elected Officials</h3>
+
+<% @electeds.each do |g| %>
+
+<h5><%= g.title %> <%= g.firstname %> <%= g.lastname %></h5>
+
+<% end %>
+<% end %>
 
 
 
+<% unless @groups.blank? %>
+<h3>Groups</h3>
+
+<% @groups.each do |g| %>
+
+<h5><%= g.organization %></h5>
+
+<% end %>
+<% end %>
+
+<% unless @individuals.blank? %>
+<h3>Individuals</h3>
+
+<% @individuals.each do |i| %>
+
+<h5><%= i.title %> <%= i.firstname %> <%= i.lastname %></h5>
+
+<% end %>
+<% end %>
+
+<% content_for :rh do %>
+
+<% if current_user %>
+
+<p><%= link_to 'Add a new supporter', new_supporter_path, class: "btn btn-default" %>
+<p><%= link_to 'Manage Supporters', supporters_path, class: "btn btn-default" %>
+
+<% end %>
+<% end %>

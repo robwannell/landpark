@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325210739) do
+ActiveRecord::Schema.define(version: 20150415214425) do
 
   create_table "admin_contribution_levels", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -35,6 +35,30 @@ ActiveRecord::Schema.define(version: 20150325210739) do
   end
 
   add_index "contributions", ["admin_contribution_level_id"], name: "index_contributions_on_admin_contribution_level_id", using: :btree
+
+  create_table "news", force: :cascade do |t|
+    t.string   "title",               limit: 255
+    t.text     "body",                limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "supporters", force: :cascade do |t|
+    t.string   "firstname",    limit: 255
+    t.string   "lastname",     limit: 255
+    t.boolean  "group",        limit: 1
+    t.integer  "rank",         limit: 4
+    t.string   "organization", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "title",        limit: 255
+    t.boolean  "elected",      limit: 1
+    t.boolean  "individual",   limit: 1
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",            limit: 255, null: false

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Latest News and Events</h1>
+
+    <%  @announcements.each do |announcement| %>
+	<div class="newsitem">
+    <h2><%= link_to announcement.title, announcement %></h2>
+	<h5><%= announcement.created_at.strftime("%B %d %Y")%> <% if current_user %><%= link_to 'Edit', edit_news_path(announcement) %> | <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></h5>
+	<%= truncate(announcement.body, 
+  length: 250, 
+  separator: ' ', 
+  omission: '... ') {     
+    link_to "read more", announcement 
+} %>
+        </div>
+    
+    <% end %>
+  
+<div class="pagination">
+<%= will_paginate @announcements %>
+</div>
+ 

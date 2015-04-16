@@ -1,7 +1,15 @@
-<h1>Admin#index</h1>
-
-
-<p><%= link_to "Add user", new_user_path %></p>
-<p><%= link_to 'Manage Contribution Levels', admin_contribution_levels_url %>
+<h1>Admin Dashboard</h1>
+<hr>
+<p><%= link_to 'Manage Contributions', contributions_url, class: "btn btn-default"  %>
 	
-<p><%= link_to 'Manage Contributions', contributions_url %>
+	<p><%= link_to 'Manage Supporters', supporters_url, class: "btn btn-default"  %>
+		
+		<p><%= link_to 'Add a news story or event', new_news_url, class: "btn btn-default"  %>
+		
+		
+		<hr>
+		
+<p><%= link_to "Add user", new_user_path, class: "btn btn-default"  %></p>
+<p><%= link_to 'Manage Contribution Levels', admin_contribution_levels_url, class: "btn btn-default"  %>
+	
+

@@ -1,0 +1,31 @@
+<div class="announcement">
+	
+	<h1> <%= @news.title %></h1>
+<h5>Posted: <%= @news.created_at.strftime('%d %b %Y')%> <% if current_user %><%= link_to 'Edit', edit_news_path(@news) %> | <%= link_to 'Destroy', @news, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></h5>
+
+<% if @news.avatar_file_name %>
+<%= image_tag @news.avatar.url(:medium)%>
+<% end %>
+
+
+<%= simple_format(@news.body) %>
+
+<p><%= link_to 'Back', news_index_path %>
+
+
+
+</div>
+
+<% content_for :rh do %>
+<% @announcements.each do |announce| %>
+<% unless announce == @news %>
+<h3><%= announce.title %></h3>
+<p><%= truncate(announce.body, 
+  length: 80, 
+  separator: ' ', 
+  omission: '... ') {     
+    link_to "read more", announce 
+} %></p>
+<% end %>
+<% end %>
+<% end %>

@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Supporters</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+		<th>Title</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+	  <th>Individual</th>
+	  <th>Group</th>
+      <th>Elected</th>
+      <th>Rank</th>
+      <th>Organization</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supporters.each do |supporter| %>
+      <tr>
+		  <td><%= supporter.title %></td>
+        <td><%= supporter.firstname %></td>
+        <td><%= supporter.lastname %></td>
+        <td><%= supporter.individual %></td>
+		<td><%= supporter.group %></td>
+		<td><%= supporter.elected %></td>
+        <td><%= supporter.rank %></td>
+        <td><%= supporter.organization %></td>
+        
+        <td><%= link_to 'Edit', edit_supporter_path(supporter) %></td>
+        <td><%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<% content_for :rh do %>
+
+<%= link_to 'Add a New Supporter', new_supporter_path, class: "btn btn-default" %>
+
+<% end%>

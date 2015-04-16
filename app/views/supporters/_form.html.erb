@@ -1,0 +1,44 @@
+<div class="smallform">
+<%= bootstrap_form_for(@supporter) do |f| %>
+  <% if @supporter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supporter.errors.count, "error") %> prohibited this supporter from being saved:</h2>
+
+      <ul>
+      <% @supporter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+   
+    <%= f.text_field :title, placeholder: "Optional" %>
+  </div>
+  
+  <div class="field">
+   
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    
+    <%= f.text_field :organization, placeholder: "Only needed for Groups" %>
+  </div>
+  
+  <div class="field">
+    <h4>Supporter type - select one</h4>
+    <%= f.check_box :individual %> <%= f.check_box :group %> <%= f.check_box :elected %>
+  </div>
+  <div class="field">
+    <%= f.number_field :rank, placeholder: "Used to order the electeds - zero is the highest" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit :submit, class: "pull-right btn btn-default" %>
+  </div>
+<% end %>
+</div>

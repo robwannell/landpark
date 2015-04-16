@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
   
 
+  resources :news
+  
+
+  resources :supporters
+
   resources :contributions
 
   namespace :admin do

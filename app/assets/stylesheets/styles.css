@@ -1,8 +1,36 @@
 body {
-	padding-top:70px;
+	padding-top:80px;
 	
 }
 
+.notices {
+	padding:20px 0;
+}
+.navbar {
+	height:100px;
+	background-color:#fff;
+	border-bottom:  0;
+	
+}
+
+.nav {
+	padding-top:40px;
+	text-transform: uppercase;
+}
+
+.nav a{ 
+	color:#0D3D25;
+}
+
+.navbar-nav a:hover{
+	background-color:#fff;
+	border-bottom: 3px solid #0D3D25;
+}
+
+li.active a {
+	background-color:#fff;
+	border-bottom: 3px solid #F05A28;
+}
 .welcomex {
 	color:#fff;
 	height:520px;
@@ -52,14 +80,14 @@ display: inline-block;
 background-color: rgba(0,0,20,0.4); 
 }
 
-.btn-warning {
+.more-btn {
 	background-color: #ff6600;
 	color:#fff;
 	text-shadow: none;
 	border: 0;
 }
 
-.btn-warning:hover{
+.more-btn:hover{
 	background-color: #ff4400;
 	
 }
@@ -109,4 +137,29 @@ background-color: rgba(0,0,20,0.4);
 	font-size: 1.4em;
 	border: 20px solid #fff;
 	background-color: #F5F5F7;
+}
+
+.youtube {
+	padding-top:30px;
+}
+
+.smallform {
+	margin:20px 0 40px;
+}
+
+.announcement {
+	padding-top:10px;
+}
+
+.announcement img {
+	text-align:center;
+	padding:20px 0;
+}
+
+.map {
+	margin-top:100px;
+}
+#map {
+	width: 840px; height: 500px; margin:auto; margin-top:30px;padding:30px 5px;
+	
 }
