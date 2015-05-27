@@ -16,6 +16,7 @@
   </thead>
 
   <tbody >
+	  <% unless @contributions.blank?  %>
     <% @contributions.each do |contribution| %>
       <tr>
 		  <td><%= contribution.lastname %></td>
@@ -29,6 +30,7 @@
         <td><%= link_to 'Destroy', contribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+	<% end %>
   </tbody>
 </table>
 
